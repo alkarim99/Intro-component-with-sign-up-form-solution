@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body{
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      background-color: hsl(0, 100%, 74%);
+      background-image: url(images/bg-intro-desktop.png);
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 600px;
+      box-sizing: border-box;
+    }
+    .container{
+      display: flex;
+    }
+    .container .main{
+      align-self: center;
+      width: 400px;
+      padding: 20px;
+      color: #fff;
+    }
+    .container .main .title{
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 35px;
+    }
+    .container .main .desc{
+      font-size: 12px;
+    }
+    .container .side{
+      width: 450px;
+    }
+    .container .side .promo{
+      padding: 15px;
+      text-align: center;
+      background-color: hsl(248, 32%, 49%);
+      color: #fff;
+      font-weight: 400;
+      font-size: 14px;
+      border-radius: 10px;
+    }
+    .container .side .promo span{
+      font-weight: 700;
+    }
+    .container .side form{
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+    }
+    .container .side form .form-row input, button{
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      height: 40px;
+      margin: 7px 0 7px 0;
+      border-radius: 5px;
+    }
+    .container .side form .form-row{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .container .side form .form-row input{
+      padding-left: 30px;
+      border: 1px solid hsl(246, 25%, 77%);
+    }
+    .container .side form .form-row img{
+      margin: 0;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      display: none;
+    }
+    .container .side form .form-row p{
+      margin: 0;
+      font-size: 9px;
+      font-style: italic;
+      color: hsl(0, 100%, 74%);
+      text-align: right;
+      display: none;
+    }
+    .container .side form button{
+      border: none;
+      background-color: hsl(154, 59%, 51%);
+      color: #fff;
+    }
+    .container .side form .terms{
+      text-align: center;
+      font-size: 9px;
+      color: hsl(246, 25%, 77%);
+    }
+    .container .side form .terms span{
+      color: hsl(0, 100%, 74%);
+      font-weight: 700;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    @media screen and (max-width: 375px) {
+      .container{
+        margin-top: 400px;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+      }
+      .container .main{
+        order: 1;
+        width: 300px;
+      }
+      .container .side{
+        order: 2;
+        width: 300px;
+      }
+      .container .side .promo{
+        padding: 15px 45px;
+      }
+      .container .side form .terms{
+        padding: 0 20px;
+      }
+      .attribution{
+        margin-bottom: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="main">
+      <p class="title">Learn to code by watching others</p>
+      <p class="desc">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+    </div>
+    <div class="side">
+      <p class="promo"><span>Try it free 7 days</span> then $20/mo. thereafter</p>
+      <form action="#" id="my-form">
+        <div class="form-row">
+          <input type="text" id="firstName" placeholder="First Name">
+          <p class="alert-firstName">First Name cannot be empty</p>
+          <img class="error-firstName" src="images/icon-error.svg" alt="error">
+        </div>
+        <div class="form-row">
+          <input type="text" id="lastName" placeholder="Last Name">
+          <p class="alert-lastName">Last Name cannot be empty</p>
+          <img class="error-lastName" src="images/icon-error.svg" alt="error">
+        </div>
+        <div class="form-row">
+          <input type="text" id="email" placeholder="Email Address">
+          <p class="alert-email">Looks like this is not an email</p>
+          <img class="error-email" src="images/icon-error.svg" alt="error">
+        </div>
+        <div class="form-row">
+          <input type="password" id="password" placeholder="Password">
+          <p class="alert-password">Password cannot be empty</p>
+          <img class="error-password" src="images/icon-error.svg" alt="error">
+        </div>
+        <button type="submit" id="submit">CLAIM YOUR FREE TRIAL</button>
+        <p class="terms">By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Abdullah Al-Karim</a>.
+    </p>
+  </footer>
+  <script>
+    const myform = document.querySelector('#my-form');
+    const firstName = document.querySelector('#firstName');
+    const lastName = document.querySelector('#lastName');
+    const email = document.querySelector('#email');
+    const password = document.querySelector('#password');
+    const submit = document.querySelector('#submit');
+
+    const alertFirstName = document.querySelector('.alert-firstName');
+    const alertLastName = document.querySelector('.alert-lastName');
+    const alertEmail = document.querySelector('.alert-email');
+    const alertPassword = document.querySelector('.alert-password');
+
+    const errorFirstName = document.querySelector('.error-firstName');
+    const errorLastName = document.querySelector('.error-lastName');
+    const errorEmail = document.querySelector('.error-email');
+    const errorPassword = document.querySelector('.error-password');
+
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    myform.addEventListener('submit', onSubmit);
+
+    function onSubmit() {
+      if (firstName.value=='') {
+        alertFirstName.style.display='block';
+        errorFirstName.style.display='block';
+      }
+      else {
+        console.log('firstName OKE');
+        alertFirstName.style.display='none';
+        errorFirstName.style.display='none';
+      }
+
+      if (lastName.value=='') {
+        alertLastName.style.display='block';
+        errorLastName.style.display='block';
+      }
+      else {
+        console.log('lastName OKE');
+        alertLastName.style.display='none';
+        errorLastName.style.display='none';
+      }
+
+      if (email.value.match(mailformat)) {
+        console.log('Email OKE');
+        alertEmail.style.display='none';
+        errorEmail.style.display='none';
+      }
+      else {
+        alertEmail.style.display='block';
+        errorEmail.style.display='block';
+      }
+
+      if (password.value=='') {
+        alertPassword.style.display='block';
+        errorPassword.style.display='block';
+      }
+      else {
+        console.log('password OKE');
+        alertPassword.style.display='none';
+        errorPassword.style.display='none';
+      }
+    }
+  </script>
+</body>
+</html>
